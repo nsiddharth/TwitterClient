@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="20dp" >
+
+        <ImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="45dp"
+            android:layout_toRightOf="@+id/ivProfileImage"
+            android:text="Name"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvName"
+            android:layout_below="@+id/tvName"
+            android:text="Tagline"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rlHeader" 
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/tvcount1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x followers" />
+
+        <TextView
+            android:id="@+id/tvcount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="y followers" />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/fragment_user_timeline"
+        android:name="com.codepath.apps.simpletwitter.fragments.UserTimelineFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llcount"
+        tools:layout="@layout/fragment_tweets_list" />
+
+</RelativeLayout>
